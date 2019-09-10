@@ -1,2 +1,2 @@
 # Loading-Bar-for-QT
-Simple QLineEdit based Loading bar for QT
+Simple QLineEdit based Loading Bar for QT
