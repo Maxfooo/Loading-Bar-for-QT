@@ -21,7 +21,7 @@ LoadingBar::~LoadingBar()
 
 void LoadingBar::initLineEdit()
 {
-    loading_char_width = QFontMetrics(QLabel(LOADING_CHAR).font()).width(LOADING_CHAR) - 1;
+    loading_char_width = 3; // QFontMetrics(QLabel(LOADING_CHAR).font()).width(LOADING_CHAR) - 1;
     loading_char_width = loading_char_width < 1 ? 1 : loading_char_width;
     char_width = line_edit->width() / loading_char_width;
     lb_buffer.load_width = char_width / CHAR_WIDTH_FRACTION;
