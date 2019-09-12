@@ -21,7 +21,10 @@ LoadingBar::~LoadingBar()
 
 void LoadingBar::initLineEdit()
 {
-    loading_char_width = 3; // QFontMetrics(QLabel(LOADING_CHAR).font()).width(LOADING_CHAR) - 1;
+    // Heuristic value for loading_char_width
+    // There are some differences between the font pixel size on Linux and Windows (different fonts, duh lol)
+    // This does an ok job normalizing the differences
+    loading_char_width = static_cast<int>(4.5 * log10(QFontMetrics(QLabel(LOADING_CHAR).font()).horizontalAdvance(LOADING_CHAR)));
     loading_char_width = loading_char_width < 1 ? 1 : loading_char_width;
     char_width = line_edit->width() / loading_char_width;
     lb_buffer.load_width = char_width / CHAR_WIDTH_FRACTION;

@@ -7,7 +7,7 @@
 #include <QFontMetrics>
 #include <QLabel>
 #include <vector>
-
+#include <cmath>
 
 // QTimer intervals (milliseconds)
 constexpr int LB_TIMEOUT_SLOW      = 33;
